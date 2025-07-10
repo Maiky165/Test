@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float force = 10f;
+    public float force = 10f;   //the force that gets applied on the Rigidbody
     public Rigidbody2D rb;
 
-    // Update is called once per frame
+
+    //Using FixedUpdate when working with a Rigidbody
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow)) rb.AddForce(new Vector2(0, force));
+        //if Space is being pressed a vertical force pointing up is applied on the Rigidbody
+        if (Input.GetKey(KeyCode.Space)) rb.AddForce(new Vector2(0, force));
     }
 }
