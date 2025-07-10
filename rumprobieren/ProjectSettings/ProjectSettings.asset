@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 1498f9d52fc0b224db24b5fc327e7ae2
+  productGUID: 39363329e4af4384fbec52b57ac3c009
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Test
+  productName: rumprobieren
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -688,14 +688,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Test
+  metroPackageName: rumprobieren
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Test
+  metroApplicationDescription: rumprobieren
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -764,12 +764,12 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 9f017f5c-2d96-471e-81c2-47f10c6a155b
+  cloudProjectId: 45022c67-bb32-41ad-ba14-4349dfd609f5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Test
+  projectName: rumprobieren 2025-07-09_20-19-12
   organizationId: lluttkus
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
