@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
         InstantiateLevelSegments();
     }
 
-
+    // ich war hier
 
     private void MoveLevelSegments()
     {
