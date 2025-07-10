@@ -4,6 +4,8 @@ public class Dying : MonoBehaviour
 {
     public Movement playerMovement;
     public LevelManager levelManager;
+    public Rigidbody2D rbPlayer;
+    public float torque = 10f;
 
 
 
@@ -17,5 +19,7 @@ public class Dying : MonoBehaviour
     {
         playerMovement.enabled = false;
         levelManager.enabled = false;
+        rbPlayer.constraints = RigidbodyConstraints2D.None;
+        rbPlayer.AddTorque(torque);
     }
 }

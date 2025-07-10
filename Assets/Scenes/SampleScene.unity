@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 13711055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,7 +250,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &13711060
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 13711056}
   levelManager: {fileID: 1136205139}
+  rbPlayer: {fileID: 13711059}
+  torque: 187
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
