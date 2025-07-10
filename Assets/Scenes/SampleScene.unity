@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 13711056}
   - component: {fileID: 13711059}
   - component: {fileID: 13711060}
+  - component: {fileID: 13711061}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -287,6 +288,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &13711061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13711055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3659ead7e7877e341850118547b264e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 13711056}
+  levelManager: {fileID: 1136205139}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +555,7 @@ MonoBehaviour:
   levelSegment: {fileID: 492965515483805046, guid: d4a83e9312c69eb4098936a571564620, type: 3}
   activeLevelSegments: []
   levelSpeed: 3
+  speedIncreaseRate: 0.05
 --- !u!4 &1136205140
 Transform:
   m_ObjectHideFlags: 0
