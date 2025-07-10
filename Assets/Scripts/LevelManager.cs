@@ -5,12 +5,17 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject levelSegment;
     public List<GameObject> activeLevelSegments;
-    public float levelSpeed = 3f;
+    public float levelSpeed = 3f; // Start Speed
+    public float speedIncreaseRate = 0.05f;  // Geschwindigkeitserhöhung pro Sekunde
+    private float currentSpeed;  
+
 
 
     void Start()
     {
         activeLevelSegments.Add(Instantiate(levelSegment, new Vector3(0, 0, 0), Quaternion.identity));
+
+        currentSpeed = levelSpeed;
     }
 
 
@@ -19,6 +24,9 @@ public class LevelManager : MonoBehaviour
         MoveLevelSegments();
         DestroyLevelSegments();
         InstantiateLevelSegments();
+
+        currentSpeed += speedIncreaseRate * Time.deltaTime;  // Geschwindigkeit erhöhen
+        
     }
 
     // ich war hier
@@ -27,7 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < activeLevelSegments.Count; i++)
         {
-            activeLevelSegments[i].transform.position -= new Vector3(levelSpeed * Time.deltaTime, 0, 0);
+            activeLevelSegments[i].transform.position -= new Vector3(currentSpeed * Time.deltaTime, 0, 0);
         }
     }
 
@@ -40,7 +48,7 @@ public class LevelManager : MonoBehaviour
                 GameObject temp = activeLevelSegments[i];
                 activeLevelSegments.RemoveAt(i);
                 Destroy(temp);
-            } 
+            }
         }
     }
 
