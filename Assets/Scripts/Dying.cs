@@ -2,24 +2,22 @@ using UnityEngine;
 
 public class Dying : MonoBehaviour
 {
-    public Movement playerMovement;
-    public LevelManager levelManager;
+    public GameManager gameManager;     
     public Rigidbody2D rbPlayer;
-    public float torque = 10f;
+    public float deathTorque = 10f;     //amount of torque applied on the player on death
 
 
-
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Obstacle")) Die();
+        if (other.gameObject.CompareTag("Obstacle")) Die();     ///triggers death on contact with an obstacle  
     }
 
 
     private void Die()
     {
-        playerMovement.enabled = false;
-        levelManager.enabled = false;
-        rbPlayer.constraints = RigidbodyConstraints2D.None;
-        rbPlayer.AddTorque(torque);
+        rbPlayer.constraints = RigidbodyConstraints2D.None;     //removes the freeze of the rotation of the player
+        rbPlayer.AddTorque(deathTorque);                        //adds torque on the player
+        gameManager.GameOver();                                 //calls a GameOver through the GameManager
     }
 }
