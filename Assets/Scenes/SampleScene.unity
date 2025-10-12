@@ -601,9 +601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329da620550fbc9439dfdba33d727af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSegment: {fileID: 492965515483805046, guid: d4a83e9312c69eb4098936a571564620, type: 3}
+  levelSegments:
+  - {fileID: 492965515483805046, guid: d4a83e9312c69eb4098936a571564620, type: 3}
+  - {fileID: 492965515483805046, guid: f1302817fbbce154aa509d845a32d1c6, type: 3}
   activeLevelSegments: []
-  levelSpeed: 3
+  levelSpeed: 20
   speedIncreaseRate: 0.05
   active: 1
 --- !u!4 &1136205140

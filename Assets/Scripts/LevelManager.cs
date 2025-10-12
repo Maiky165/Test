@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject levelSegment;                 //level segment prefab
+    public List<GameObject> levelSegments;          //list of all segment prefabs
     public List<GameObject> activeLevelSegments;    //list of all active level segments
     public float levelSpeed = 3f;                   //start speed of the level segments
     private float currentSpeed;                     //current speed of the level segments  
@@ -18,9 +18,9 @@ public class LevelManager : MonoBehaviour
     {
         if (active == false) return;
 
-        MoveLevelSegments();
-        DestroyLevelSegments();
-        InstantiateLevelSegments();
+        MoveLevelSegments();                
+        DestroyOffCameraLevelSegments();
+        InitiateNextLevelSegment();         //initiates the next level segment if necessary
 
         currentSpeed += speedIncreaseRate * Time.deltaTime;  //increases the speed of the level segments
 
@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
     }
 
     //destroys all level segment that left the camera view behind the player
-    private void DestroyLevelSegments()
+    private void DestroyOffCameraLevelSegments()
     {
         for (int i = 0; i < activeLevelSegments.Count; i++)
         {
@@ -53,30 +53,25 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    //initiates a new level segment ahead of the camera when the last level segment is about to not cover the camera view anymore
-    private void InstantiateLevelSegments()
+    //initiates a new level segment ahead of the camera if the last level segment is about to not cover the camera view anymore
+    private void InitiateNextLevelSegment()
     {
-        bool levelSegmentsReachScreenEnd = true;
+        //checks if the current level segment is about to reach the end of the camera view
+        bool levelSegmentsReachedScreenEnd = true;
 
         for (int i = activeLevelSegments.Count; i > 0; i--)
         {
-            if (activeLevelSegments[activeLevelSegments.Count-i].transform.position.x > -17f) levelSegmentsReachScreenEnd = false;
+            if (activeLevelSegments[activeLevelSegments.Count - i].transform.position.x > -17f) levelSegmentsReachedScreenEnd = false;
         }
 
-        if (levelSegmentsReachScreenEnd) activeLevelSegments.Add(Instantiate(levelSegment, new Vector3(52, 0, 0), Quaternion.identity));
+        //chooses and initiates the next level segment
+        int nextLevel = Random.Range(0, levelSegments.Count);
+        if (levelSegmentsReachedScreenEnd) activeLevelSegments.Add(Instantiate(levelSegments[nextLevel], new Vector3(52, 0, 0), Quaternion.identity));
     }
 
     //to be called when starting a game
     public void Initiate()
     {
-
-        //for (int i = 0; i < activeLevelSegments.Count; i++)
-        //{
-        //   GameObject temp = activeLevelSegments[i];
-        //    activeLevelSegments.RemoveAt(0);
-        //    Destroy(levelSegment);
-        //}
-
         //destroys all active level segments and removes them from activeLevelSegments
         for (int i = activeLevelSegments.Count; i > 0; i--)
         {
@@ -85,7 +80,7 @@ public class LevelManager : MonoBehaviour
             Destroy(temp);
         }
 
-        activeLevelSegments.Add(Instantiate(levelSegment, new Vector3(0, 0, 0), Quaternion.identity));
+        activeLevelSegments.Add(Instantiate(levelSegments[0], new Vector3(0, 0, 0), Quaternion.identity));
 
         currentSpeed = levelSpeed;
     }
