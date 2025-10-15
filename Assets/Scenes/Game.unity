@@ -350,7 +350,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreCounterText: {fileID: 1837217687}
   gameManager: {fileID: 523030451}
+  levelManager: {fileID: 1136205139}
   score: 0
+  scoreMultiplier: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
