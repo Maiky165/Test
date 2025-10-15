@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Movement playerMovement;     
+    public PlayerMovement playerMovement;     
     public Rigidbody2D playerRb;
     public LevelManager levelManager;
 

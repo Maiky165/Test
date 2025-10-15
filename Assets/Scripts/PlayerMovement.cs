@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float force = 10f;         //the force that gets applied on the Rigidbody
     public Rigidbody2D playerRb;      //the Rigidbody2D of the player
